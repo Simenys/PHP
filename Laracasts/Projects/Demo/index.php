@@ -46,20 +46,43 @@
                 'author' => 'Isaac Asimov',
                 'pages' => 320,
                 'link' => 'www.books.com',
-                'date' =>1978 
+                'date' => 1978 
+            ],
+            [
+                'name' => 'Foundation 2',
+                'author' => 'Isaac Asimov',
+                'pages' => 320,
+                'link' => 'www.books.com',
+                'date' => 1982
             ]
         ];
+
+        function filter($items, $key, $value) 
+        {
+            $filteredItems = [];
+
+            foreach ($items as $item) {
+                if ($item[$key] === $value) {
+                    $filteredItems[] = $item;
+                }
+            }
+
+            return $filteredItems;
+        };
+
+        $filteredBooks = filter($books, 'date', 1989);
+
     ?>
 
     <div>
         <ul>
-            <?php foreach ($books as $book) : ?>
+            <?php foreach ($filteredBooks as $book) : ?>
                 <div>
                     <a href="<?= $book['link'] ?>">
-                        <li><?= $book['name'] ?></li>
+                        <li><?= $book['name'] ?> - By <?= $book['author'] ?></li>
                     </a>
                     <p><?= " , " . $book['date'] ?></p>
-                </div>
+                </div>        
             <?php endforeach; ?>
         </ul>
     </div>
