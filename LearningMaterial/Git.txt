@@ -1,0 +1,24 @@
+
+Update local from GitHub - git pull origin main
+
+
+Open terminal and enter the folder of the github repository/project you want to update
+Type into terminal: “git add .” and then hit enter
+Type into terminal “git status” and then hit enter (this step is optional)
+Type into terminal “git commit -m ‘type any message here” and then hit enter
+Type into terminal “git push” and then hit enter or "git psuh origin main"
+
+
+git clone - to move to another pc folder
+
+git pull to get updates to the folder
+
+
+cd /path/to/your/project
+git init
+git add .
+git commit -m "Initial commit"
+Go to github, create repository and then add it:
+git remote add origin https://github.com/username/repository-name.git
+git branch -M main
+git push -u origin master
