@@ -1,7 +1,16 @@
-<?php
+<?php 
 
-require ('views/partials/fn.php');
+require ("views/partials/fn.php");
 
-$heading = "Home";
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-require 'views/index.view.php';
+// dd($uri);
+
+
+if ($uri === '/') {
+    require ('controllers/index.php');
+} elseif ($uri === '/about.php') {
+    require ('controllers/about.php');
+} elseif ($uri === '/contact.php') {
+    require ('controllers/contact.php');
+}
